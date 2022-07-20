@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <script src="java.js" charset="utf-8"></script>
+        <link rel="icon" href="hourglass.png">
   <title>Idle Game</title>
     </head>
     <body onload="load()">
@@ -13,20 +14,34 @@
                 <h1>Idle Game</h1>
             </div>
             <div id="game">
-                <!-- <div id="buttons"> 
-                    <button type="button" name="click" onclick="add()">Click</button>
-                </div> -->
                 <div id="idleshop">
-                    <button onclick="buyAuto1()" class="buyButton">Buy Auto Upgrade 1</button>
-                    <h5>+1 Point Per Second | Cost: <span id="auto1price"></span> | Owned: <span id="auto1num"></span></h5>
+                    <div id="gen1">
+                        <button onclick="buygen1()" class="buyButton">Buy Generator 1</button>
+                        <h5>+1 Point Per Second | Cost: <span id="gen1price">0</span> | Owned: <span id="gen1num">0</span></h5>
+                    </div>
+                    <div id="gen2">
+                        <button onclick="buygen2()" class="buyButton">Buy Generator 2</button>
+                        <h5>+1 Point Per Second | Cost: <span id="gen2price">500</span> | Owned: <span id="gen2num">0</span></h5>
+                    </div>
+                    <div id="gen3">
+                        <button onclick="buygen3()" class="buyButton">Buy Generator 3</button>
+                        <h5>+1 Point Per Second | Cost: <span id="gen3price">3000</span> | Owned: <span id="gen3num">0</span></h5>
+                    </div>
                   </div>
                 <div id="inv">
-                    <p id="point">Points : <span id="showPoint"></span></p>
-                    <p id="pps">Points Per Second : <span id="showpsec"></span></p>
+                    <p id="point">Points : <span id="showPoint">0</span></p>
+                    <p id="pps">Points Per Second : <span id="showpsec">0</span></p>
+                    <p id="pres">Prestige : <span>0</span></p>
                 </div>
-                <button onclick="save()">Save Game</button>
-                <button onclick="load()">Load Save</button>
-                <button onclick="delSave()">Delete Save</button>
+                <div id="savebox">
+                    <button onclick="save()">Save Game</button>
+                    <button onclick="load()">Load Save</button>
+                    <button onclick="delSave()">Delete Save</button>
+                </div>
+                <div id="prestigebox">
+                    <button onclick="prestige()">Prestige</button>
+                    <h5>Requires 10000 points!</h5>
+                </div>
         </div>
     </body>
 </html> 
