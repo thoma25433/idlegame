@@ -5,9 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <script src="java.js" charset="utf-8"></script>
-        <script type="text/javascript">
-             alert("Welcome, the game does not save right now! Be careful!");
-        </script>
   <title>Idle Game</title>
     </head>
     <body onload="load()">
@@ -21,11 +18,11 @@
                 </div> -->
                 <div id="idleshop">
                     <button onclick="buyAuto1()" class="buyButton">Buy Auto Upgrade 1</button>
-                    <h5>+1 Point Per Second | Cost: <span id="auto1price">0</span> | Owned: <span id="auto1num">0</span></h5>
+                    <h5>+1 Point Per Second | Cost: <span id="auto1price"></span> | Owned: <span id="auto1num"></span></h5>
                   </div>
                 <div id="inv">
-                    <p id="point">Points : <span id="showPoint">0</span></p>
-                    <p id="pps">Points Per Second : <span id="showpsec">0</span></p>
+                    <p id="point">Points : <span id="showPoint"></span></p>
+                    <p id="pps">Points Per Second : <span id="showpsec"></span></p>
                 </div>
                 <button onclick="save()">Save Game</button>
                 <button onclick="load()">Load Save</button>
