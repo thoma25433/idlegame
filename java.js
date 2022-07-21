@@ -7,12 +7,29 @@ var gen2s = 0;
 var gen3Cost = 3000;
 var gen3s = 0;
 var prestigeLevel = 0;
-var prestigeCost = 10000;
+var prestigeCost = 10;
 
 
 
 function prestige() {
-
+  if (point >= prestigeCost) {
+    point -= point;
+    pointPerSecond -= pointPerSecond;
+    gen1s -= gen1s;
+    gen2s -= gen2s;
+    gen3s -= gen3s;
+    gen1Cost = 0;
+    gen2Cost = 500;
+    gen3Cost = 3000;
+    document.getElementById("showPoint").innerText = point;
+    prestigeLevel++;
+    document.getElementById("showplvl").innerText = prestigeLevel;
+    prestigeCost *= 2;
+    prestigeCost = Math.round(prestigeCost);
+    document.getElementById("prescost").innerText = prestigeCost;
+  } else {
+    alert("You don't have enough points!")
+  }
 }
 
 function save() {
