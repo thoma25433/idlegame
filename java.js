@@ -10,7 +10,7 @@ var gen3Cost = 3000;
 var gen3s = 0;
 var gen3gain = 1;
 var prestigeLevel = 0;
-var prestigeCost = 10;
+var prestigeCost = 10000;
 
 function prestige() {
   if (point >= prestigeCost) {
@@ -96,7 +96,7 @@ setInterval(function() {
   document.getElementById("showpsec").innerText = pointPerSecond;
   document.getElementById("showplvl").innerText = prestigeLevel;
   document.getElementById("prescost").innerText = prestigeCost;
-  // save()
+  save()
 }, 1000)
 
 function buygen1() {
@@ -106,7 +106,7 @@ function buygen1() {
     gen1s++;
     document.getElementById("gen1num").innerText = gen1s;
     gen1Cost += 1;
-    gen1Cost *= 1.5;
+    gen1Cost *= 1.2;
     gen1Cost = Math.round(gen1Cost);
     document.getElementById("gen1price").innerText = gen1Cost;
     pointPerSecond += gen1gain;
