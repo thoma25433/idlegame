@@ -5,12 +5,12 @@ var gen1s = 0;
 var gen1gain = 1;
 var gen2Cost = 500;
 var gen2s = 0;
-var gen2gain = 1;
+var gen2gain = 2;
 var gen3Cost = 3000;
 var gen3s = 0;
-var gen3gain = 1;
+var gen3gain = 3;
 var prestigeLevel = 0;
-var prestigeCost = 10000;
+var prestigeCost = 25000;
 
 function prestige() {
   if (point >= prestigeCost) {
@@ -28,11 +28,11 @@ function prestige() {
     prestigeCost *= 2;
     prestigeCost = Math.round(prestigeCost);
     document.getElementById("prescost").innerText = prestigeCost;
-    gen1gain *= 1.5;
+    gen1gain *= 1.2;
     gen1gain = Math.round(gen1gain)
-    gen2gain *= 1.5;
+    gen2gain *= 1.2;
     gen2gain = Math.round(gen2gain)
-    gen3gain *= 1.5;
+    gen3gain *= 1.2;
     gen3gain = Math.round(gen3gain)
   } else {
     alert("You don't have enough points!")
