@@ -14,6 +14,7 @@ var prestigeCost = 25000;
 
 function prestige() {
   if (point >= prestigeCost) {
+    confirm("Are you sure?");
     point -= point;
     pointPerSecond -= pointPerSecond;
     gen1s -= gen1s;
