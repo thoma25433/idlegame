@@ -97,6 +97,7 @@ setInterval(function() {
   document.getElementById("showpsec").innerText = pointPerSecond;
   document.getElementById("showplvl").innerText = prestigeLevel;
   document.getElementById("prescost").innerText = prestigeCost;
+  point = (point).toFixed(2)
   save()
 }, 1000)
 
