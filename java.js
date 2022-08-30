@@ -35,6 +35,7 @@ function prestige() {
     gen2gain = (gen2gain).toFixed(2);
     gen3gain *= 1.2;
     gen3gain = (gen3gain).toFixed(2);
+    point = (point).toFixed(2)
   } else {
     alert("You don't have enough points!")
   }
@@ -114,6 +115,7 @@ function buygen1() {
     pointPerSecond += gen1gain;
     document.getElementById("showpsec").innerText = pointPerSecond;
     document.getElementById("gen1add").innerText = gen1gain;
+    point = (point).toFixed(2)
   } else {
     alert("You don't have enough points!")
   }
@@ -130,6 +132,7 @@ function buygen2() {
     pointPerSecond += gen2gain;
     document.getElementById("showpsec").innerText = pointPerSecond;
     document.getElementById("gen2add").innerText = gen2gain;
+    point = (point).toFixed(2)
   } else {
     alert("You don't have enough points!")
   }
@@ -146,6 +149,7 @@ function buygen3() {
     pointPerSecond += gen3gain;
     document.getElementById("showpsec").innerText = pointPerSecond;
     document.getElementById("gen3add").innerText = gen3gain;
+    point = (point).toFixed(2)
   } else {
     alert("You don't have enough points!")
   }
