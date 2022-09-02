@@ -12,9 +12,27 @@ var gen3gain = 3;
 var prestigeLevel = 0;
 var prestigeCost = 25000;
 
+function update() {
+    document.getElementById("showPoint").innerText = point;
+    document.getElementById("showplvl").innerText = prestigeLevel;
+    document.getElementById("prescost").innerText = prestigeCost;
+    document.getElementById("showPoint").innerText = point;
+    document.getElementById("gen1num").innerText = gen1s;
+    document.getElementById("gen1price").innerText = gen1Cost;
+    document.getElementById("gen1add").innerText = gen1gain;
+    document.getElementById("gen2num").innerText = gen2s;
+    document.getElementById("gen2price").innerText = gen2Cost;
+    document.getElementById("gen2add").innerText = gen2gain;
+    document.getElementById("gen3num").innerText = gen3s;
+    document.getElementById("gen3price").innerText = gen3Cost;
+    document.getElementById("gen3add").innerText = gen3gain;
+    document.getElementById("showpsec").innerText = pointPerSecond;
+    document.getElementById("showplvl").innerText = prestigeLevel;
+    document.getElementById("prescost").innerText = prestigeCost;
+}
 function prestige() {
+    if (confirm("Are you sure?") == true){
   if (point >= prestigeCost) {
-    confirm("Are you sure?");
     point -= point;
     pointPerSecond -= pointPerSecond;
     gen1s -= gen1s;
@@ -23,22 +41,19 @@ function prestige() {
     gen1Cost = 0;
     gen2Cost = 500;
     gen3Cost = 3000;
-    document.getElementById("showPoint").innerText = point;
     prestigeLevel++;
-    document.getElementById("showplvl").innerText = prestigeLevel;
     prestigeCost *= 2;
-    prestigeCost = (prestigeCost).toFixed(2);
-    document.getElementById("prescost").innerText = prestigeCost;
-    gen1gain *= 1.2;
-    gen1gain = (gen1gain).toFixed(2);
-    gen2gain *= 1.2;
-    gen2gain = (gen2gain).toFixed(2);
-    gen3gain *= 1.2;
-    gen3gain = (gen3gain).toFixed(2);
-    point = (point).toFixed(2)
+    gen1gain *= 1.5;
+    gen1gain = Math.round(gen1gain)
+    gen2gain *= 1.5;
+    gen2gain = Math.round(gen2gain)
+    gen3gain *= 1.5;
+    gen3gain = Math.round(gen3gain)
+    update();
   } else {
     alert("You don't have enough points!")
   }
+}
 }
 
 function save() {
@@ -81,41 +96,26 @@ function load() {
 
 function delSave() {
   localStorage.removeItem("save")
+  location.reload()
 }
 
 setInterval(function() {
-  point += pointPerSecond;
-  document.getElementById("showPoint").innerText = point;
-  document.getElementById("gen1num").innerText = gen1s;
-  document.getElementById("gen1price").innerText = gen1Cost;
-  document.getElementById("gen1add").innerText = gen1gain;
-  document.getElementById("gen2num").innerText = gen2s;
-  document.getElementById("gen2price").innerText = gen2Cost;
-  document.getElementById("gen2add").innerText = gen2gain;
-  document.getElementById("gen3num").innerText = gen3s;
-  document.getElementById("gen3price").innerText = gen3Cost;
-  document.getElementById("gen3add").innerText = gen3gain;
-  document.getElementById("showpsec").innerText = pointPerSecond;
-  document.getElementById("showplvl").innerText = prestigeLevel;
-  document.getElementById("prescost").innerText = prestigeCost;
-  point = (point).toFixed(2)
+    if (gen1s >= 1){
+    point += pointPerSecond;
+    update();
   save()
+    }
 }, 1000)
 
 function buygen1() {
   if (point >= gen1Cost) {
     point -= gen1Cost;
-    document.getElementById("showPoint").innerText = point;
     gen1s++;
-    document.getElementById("gen1num").innerText = gen1s;
     gen1Cost += 1;
     gen1Cost *= 1.2;
-    gen1Cost = (gen1Cost).toFixed(2);
-    document.getElementById("gen1price").innerText = gen1Cost;
+    gen1Cost = Math.round(gen1Cost)
     pointPerSecond += gen1gain;
-    document.getElementById("showpsec").innerText = pointPerSecond;
-    document.getElementById("gen1add").innerText = gen1gain;
-    point = (point).toFixed(2)
+    update();
   } else {
     alert("You don't have enough points!")
   }
@@ -123,16 +123,11 @@ function buygen1() {
 function buygen2() {
   if (point >= gen2Cost) {
     point -= gen2Cost;
-    document.getElementById("showPoint").innerText = point;
     gen2s++;
-    document.getElementById("gen2num").innerText = gen2s;
     gen2Cost *= 1.2;
-    gen2Cost = (gen2Cost).toFixed(2);
-    document.getElementById("gen2price").innerText = gen2Cost;
+    gen2Cost = Math.round(gen2Cost)
     pointPerSecond += gen2gain;
-    document.getElementById("showpsec").innerText = pointPerSecond;
-    document.getElementById("gen2add").innerText = gen2gain;
-    point = (point).toFixed(2)
+    update();
   } else {
     alert("You don't have enough points!")
   }
@@ -140,16 +135,11 @@ function buygen2() {
 function buygen3() {
   if (point >= gen3Cost) {
     point -= gen3Cost;
-    document.getElementById("showPoint").innerText = point;
     gen3s++;
-    document.getElementById("gen3num").innerText = gen3s;
     gen3Cost *= 1.2;
-    gen3Cost = (gen3Cost).toFixed(2);
-    document.getElementById("gen3price").innerText = gen3Cost;
+    gen3Cost = Math.round(gen3Cost)
     pointPerSecond += gen3gain;
-    document.getElementById("showpsec").innerText = pointPerSecond;
-    document.getElementById("gen3add").innerText = gen3gain;
-    point = (point).toFixed(2)
+    update();
   } else {
     alert("You don't have enough points!")
   }
