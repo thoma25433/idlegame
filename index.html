@@ -10,23 +10,43 @@
     </head>
     <body onload="load()">
         <div id="content">
-            <div id="headerbox">
-                <h1>Idle Game</h1>
-            </div>
+          <div id="leaderboard">
+            <h2>Prestige Leaderboard</h2>
+            <h3>#1.</h3>
+            <h4>#2.</h4>
+            <h5>#3.</h5>
+            <h6>4.</h6>
+            <h6>5.</h6>
+            <h6>6.</h6>
+            <h6>7.</h6>
+            <h6>8.</h6>
+            <h6>9.</h6>
+            <h6>10.</h6>
+          </div>
             <div id="game">
+              <div id="headerbox">
+                  <h1>Idle Game</h1>
+              </div>
                 <div id="idleshop">
                     <div id="gen1">
+                      <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
                         <button onclick="buygen1()" class="buyButton">Buy Generator 1</button>
                         <h5>+<span id="gen1add">1</span> Point Per Second | Cost: <span id="gen1price">0</span> | Owned: <span id="gen1num">0</span></h5>
                     </div>
                     <div id="gen2">
+                      <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
                         <button onclick="buygen2()" class="buyButton">Buy Generator 2</button>
                         <h5>+<span id="gen2add">2</span> Point Per Second | Cost: <span id="gen2price">500</span> | Owned: <span id="gen2num">0</span></h5>
                     </div>
                     <div id="gen3">
+                      <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
                         <button onclick="buygen3()" class="buyButton">Buy Generator 3</button>
                         <h5>+<span id="gen3add">3</span> Point Per Second | Cost: <span id="gen3price">3000</span> | Owned: <span id="gen3num">0</span></h5>
                     </div>
+                  </div>
+                  <div id="prestigebox">
+                      <button onclick="prestige()">Prestige (RESETS)</button>
+                      <h5>Requires <span id="prescost">25000</span> points, but boosts your earnings by 1.5x</h5>
                   </div>
                 <div id="inv">
                     <p id="point">Points : <span id="showPoint">0</span></p>
@@ -37,11 +57,9 @@
                     <button onclick="save()">Save Game</button>
                     <button onclick="load()">Load Save</button>
                     <button onclick="delSave()">Delete Save</button>
-                </div> 
-                <div id="prestigebox">
-                    <button onclick="prestige()">Prestige (RESETS)</button>
-                    <h5>Requires <span id="prescost">25000</span> points, but boosts your earnings by 1.2x</h5>
                 </div>
+
         </div>
     </body>
-</html> 
+</html>
+
