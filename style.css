@@ -1,18 +1,43 @@
 body{
     background-color:#363738;
+    height: 100%;
+}
+#content  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
 }
 #game{
+  /* margin: 0 5% 0 5%; */
+  display: flex;
+justify-content: center;
+border: 5px solid #000000;
+/* box-shadow: 5px 10px 8px 10px #888888; */
+/* box-shadow: 2px 2px #696764; */
+border-radius: 5px;
+padding-top: 1%;
+padding-left: 2%;
+padding-right: 5%;
+padding-bottom: 1%;
+flex-direction: column;
+background-color: #ffffff;
+box-shadow: 2px 2px #737170;
+/* margin-top: 5%; */
+    /* display: block;
     position: fixed;
-    top: 10%;
+    top: 5%;
     left: 20%;
-    border: 5px solid black;
+    /* bottom: 10%; */
+    /* border: 5px solid black;
     padding-left: 1%;
-    padding-right: 39%;
+    padding-right: 39%; */
     /* padding-top: 5%; */
-    padding-bottom: 10%;
-    background-color:#ffffff;
+    /* padding-bottom: 2%;
+    background-color:#ffffff; */
 }
-#leaderboard{
+/* #leaderboard{
     position: fixed;
     top: 5%;
     left: 80%;
@@ -23,4 +48,67 @@ body{
     padding-bottom: 10px;
     background-color:#ffffff;
 }
+ */
+ #back {
+   margin-bottom: 2%;
+ }
+ #settingsbox{
+   display: none;
+ }
+ /* #settingpic {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+} */
+h5 {
+  margin-top: 1%;
+}
+.gens {
+  margin: 7% 0 7% 0;
+}
+#headerbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  color: #ffffff;
+  text-shadow: 2px 2px #737170;
+}
+#inv {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  position: sticky;
+  gap: 10px;
+  min-width: 25%;
+  min-height: 25%;
+  /* flex-wrap: wrap; */
+}
 
+.invbox {
+  display: flex;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  /* gap: 5px; */
+  padding: 10px;
+  background-color: #ffffff;
+  position: sticky;
+  box-shadow: 4px 2px #737170;
+  min-width: 40%;
+  min-height: 40%;
+  /* flex-direction: row; */
+}
+button {
+  border-radius: 8px;
+  border: 2px solid gray;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px #999;
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px #737170;
+  background-color: #4CAF50; /* Green */
+  color: black;
+}

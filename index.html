@@ -5,14 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <script src="java.js" charset="utf-8"></script>
-        <link rel="icon" href="imgs/hourglass.png">
-  <title>Idle Game</title>
+        <link rel="icon" href="img/hourglass.png">
+  <title>Gold Miner</title>
     </head>
     <body onload="load()">
         <div id="content">
-          <div id="leaderboard">
+          <div id="headerbox">
+              <h1>GOLD MINER</h1>
+          </div>
+          <!-- <div id="leaderboard">
             <h2>Prestige Leaderboard</h2>
-            <h3>#1.</h3>
+            <h3>#1. You : <span id="showplvl"></span></h3>
             <h4>#2.</h4>
             <h5>#3.</h5>
             <h6>4.</h6>
@@ -22,44 +25,58 @@
             <h6>8.</h6>
             <h6>9.</h6>
             <h6>10.</h6>
+          </div> -->
+          <div id="inv">
+              <p class="invbox">Gold :&nbsp<span id="showPoint">0</span></p>
+              <p class="invbox">Per Second :&nbsp<span id="showpsec">0</span></p>
+              <p class="invbox">Prestige :&nbsp<span id="showplvl">0</span></p>
           </div>
             <div id="game">
-              <div id="headerbox">
-                  <h1>Idle Game</h1>
-              </div>
+              <img id='settingpic' src="img/gear.png" alt="Settings" width="5%" length="5%" onclick='setting()'>
+    <div id="settingsbox">
+        <button id='back' onclick='back()'> &lt-- </button>
+        <div id="savebox">
+        <button onclick="save()">Save Game</button>
+        <button onclick="load()">Load Save</button>
+        <button onclick="delSave()">Delete Save</button>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>Made by: Tommy Blount</p>
+    </div>
+    </div>
+    <div id='gam2'>
                 <div id="idleshop">
-                    <div id="gen1">
+                    <div class="gens">
                       <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
-                        <button onclick="buygen1()" class="buyButton">Buy Generator 1</button>
-                        <h5>+<span id="gen1add">1</span> Point Per Second | Cost: <span id="gen1price">0</span> | Owned: <span id="gen1num">0</span></h5>
+                    <button onclick="buygen1()" id="buyButton1">Buy Simple Miner</button>
+                        <h5>+<span id="gen1add">1</span> Gold Per Second | Cost: <span id="gen1price">0</span> | Owned: <span id="gen1num">0</span></h5>
                     </div>
-                    <div id="gen2">
+                    <div class="gens">
                       <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
-                        <button onclick="buygen2()" class="buyButton">Buy Generator 2</button>
-                        <h5>+<span id="gen2add">2</span> Point Per Second | Cost: <span id="gen2price">500</span> | Owned: <span id="gen2num">0</span></h5>
+                        <button onclick="buygen2()" id="buyButton2">Buy Better Miner</button>
+                        <h5>+<span id="gen2add">2</span> Gold Per Second | Cost: <span id="gen2price">500</span> | Owned: <span id="gen2num">0</span></h5>
                     </div>
-                    <div id="gen3">
+                    <div class="gens">
                       <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
-                        <button onclick="buygen3()" class="buyButton">Buy Generator 3</button>
-                        <h5>+<span id="gen3add">3</span> Point Per Second | Cost: <span id="gen3price">3000</span> | Owned: <span id="gen3num">0</span></h5>
+                        <button onclick="buygen3()" id="buyButton3">Buy Pro Miner</button>
+                        <h5>+<span id="gen3add">3</span> Gold Per Second | Cost: <span id="gen3price">3000</span> | Owned: <span id="gen3num">0</span></h5>
                     </div>
                   </div>
                   <div id="prestigebox">
-                      <button onclick="prestige()">Prestige (RESETS)</button>
-                      <h5>Requires <span id="prescost">25000</span> points, but boosts your earnings by 1.5x</h5>
+                      <button onclick="prestige()" id="prest">Prestige</button>
+                      <h5>Costs <span id="prescost">10000</span> gold and resets your progress, but boosts your earnings by 1.5x</h5>
+                      <br>
                   </div>
-                <div id="inv">
-                    <p id="point">Points : <span id="showPoint">0</span></p>
-                    <p id="pps">Points Per Second : <span id="showpsec">0</span></p>
-                    <p id="pres">Prestige : <span id="showplvl">0</span></p>
-                </div>
-                <div id="savebox">
+
+                <!-- <div id="inv">
+                    <p id="point">Gold : <span id="showPoint">0</span></p>
+                    <p id="pps">Gold Per Second : <span id="showpsec">0</span></p>
+                    <p id="pres">Prestige : <span id="showplvl2">0</span></p>
+                </div> -->
+                <!-- <div id="savebox">
                     <button onclick="save()">Save Game</button>
                     <button onclick="load()">Load Save</button>
                     <button onclick="delSave()">Delete Save</button>
-                </div>
-
+                </div> -->
+</div>
         </div>
     </body>
 </html>
-

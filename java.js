@@ -10,11 +10,10 @@ var gen3Cost = 3000;
 var gen3s = 0;
 var gen3gain = 3;
 var prestigeLevel = 0;
-var prestigeCost = 25000;
+var prestigeCost = 1;
 
 function update() {
     document.getElementById("showPoint").innerText = point;
-    document.getElementById("showplvl").innerText = prestigeLevel;
     document.getElementById("prescost").innerText = prestigeCost;
     document.getElementById("showPoint").innerText = point;
     document.getElementById("gen1num").innerText = gen1s;
@@ -29,32 +28,33 @@ function update() {
     document.getElementById("showpsec").innerText = pointPerSecond;
     document.getElementById("showplvl").innerText = prestigeLevel;
     document.getElementById("prescost").innerText = prestigeCost;
+    if (point < gen1Cost) {
+      document.getElementById('buyButton1').style.backgroundColor = '#f55b5b';
+    }else {
+      document.getElementById('buyButton1').style.backgroundColor = '#4CAF50';
+    }
+    if (point < gen2Cost) {
+      document.getElementById('buyButton2').style.backgroundColor = '#f55b5b';
+    }else {
+      document.getElementById('buyButton2').style.backgroundColor = '#4CAF50';
+    }
+    if (point < gen3Cost) {
+      document.getElementById('buyButton3').style.backgroundColor = '#f55b5b';
+    }else {
+      document.getElementById('buyButton3').style.backgroundColor = '#4CAF50';
+    }
+    if (point < prestigeCost) {
+      document.getElementById('prest').style.backgroundColor = '#f55b5b';
+    }else {
+      document.getElementById('prest').style.backgroundColor = '#4CAF50';
+    }
+    // document.getElementById("numba1").innerHTML = username + prestigeLevel;
 }
-function prestige() {
-    if (confirm("Are you sure?") == true){
-  if (point >= prestigeCost) {
-    point -= point;
-    pointPerSecond -= pointPerSecond;
-    gen1s -= gen1s;
-    gen2s -= gen2s;
-    gen3s -= gen3s;
-    gen1Cost = 0;
-    gen2Cost = 500;
-    gen3Cost = 3000;
-    prestigeLevel++;
-    prestigeCost *= 2;
-    gen1gain *= 1.5;
-    gen1gain = Math.round(gen1gain)
-    gen2gain *= 1.5;
-    gen2gain = Math.round(gen2gain)
-    gen3gain *= 1.5;
-    gen3gain = Math.round(gen3gain)
-    update();
-  } else {
-    alert("You don't have enough points!")
-  }
-}
-}
+// let username = prompt("Please enter a username");
+// if (username != null) {
+//   document.getElementById("numba1").innerHTML = username + ":" + prestigeLevel;
+// }
+
 
 function save() {
   var save = {
@@ -101,11 +101,20 @@ function delSave() {
 
 setInterval(function() {
     if (gen1s >= 1){
-    point += pointPerSecond;
+    point += pointPerSecond * .25;
+    // point /= 1
     update();
-  save()
     }
-}, 1000)
+}, 250)
+
+// setInterval(function() {
+//     parseFloat(point.toFixed(2))
+// }, 0)
+
+// setInterval(function() {
+//     save();
+// }, 1000)
+
 
 function buygen1() {
   if (point >= gen1Cost) {
@@ -116,8 +125,7 @@ function buygen1() {
     gen1Cost = Math.round(gen1Cost)
     pointPerSecond += gen1gain;
     update();
-  } else {
-    alert("You don't have enough points!")
+  }else {
   }
 }
 function buygen2() {
@@ -128,9 +136,8 @@ function buygen2() {
     gen2Cost = Math.round(gen2Cost)
     pointPerSecond += gen2gain;
     update();
-  } else {
-    alert("You don't have enough points!")
-  }
+  }else {
+}
 }
 function buygen3() {
   if (point >= gen3Cost) {
@@ -140,7 +147,42 @@ function buygen3() {
     gen3Cost = Math.round(gen3Cost)
     pointPerSecond += gen3gain;
     update();
-  } else {
-    alert("You don't have enough points!")
+  }else {
   }
 }
+
+function prestige() {
+  if (confirm("Are you sure?") == true){
+if (point >= prestigeCost) {
+  point -= point;
+  pointPerSecond -= pointPerSecond;
+  gen1s -= gen1s;
+  gen2s -= gen2s;
+  gen3s -= gen3s;
+  gen1Cost = 0;
+  gen2Cost = 500;
+  gen3Cost = 3000;
+  prestigeLevel++;
+  prestigeCost *= 2;
+  gen1gain *= 1.5;
+  gen1gain = Math.round(gen1gain)
+  gen2gain *= 1.5;
+  gen2gain = Math.round(gen2gain)
+  gen3gain *= 1.5;
+  gen3gain = Math.round(gen3gain)
+  update();
+} else {
+}
+}
+}
+
+function setting() {
+    document.getElementById("settingsbox").style.display = "block";
+    document.getElementById("gam2").style.display = "none";
+  }
+
+  function back() {
+      document.getElementById("settingsbox").style.display = "none";
+      document.getElementById("gam2").style.display = "block";
+    }
+ 
